@@ -41,7 +41,7 @@ JOIN airbnb_price ON airbnb_room_type.listing_id=airbnb_price.listing_id
 GROUP BY room_type
 ORDER BY AVG_price;
 
-# Looking at the result, we can conclude that shared room is the cheapest option in NYC through Airbnb is shared room, with the average price of 40,00 USD, and the most expensive option is entire home/apartment with the price of 182,83 USD.
+# Looking at the result, we can conclude that shared room is the cheapest option in NYC through Airbnb, with the average price of 40,00 USD, and the most expensive option is entire home/apartment with the price of 182,83 USD.
 
 
 -- 4. Average, MAX & MIN price by neighbourhood and room type:

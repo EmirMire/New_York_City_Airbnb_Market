@@ -5,6 +5,7 @@ CREATE DATABASE newyork_airbnb;
 
 USE newyork_airbnb;
 
+
 -- After importing our New York City Airbnb Market real-world data, some adjustments will be made in one of the tables.
 
 UPDATE airbnb_price
@@ -12,6 +13,7 @@ SET price = REPLACE(price, 'dollars', ' ')
 WHERE price IS NOT NULL;
 
 ALTER TABLE airbnb_price MODIFY price INT NOT NULL;
+
 
 -- Now we can start analyzing the data.
 
@@ -22,12 +24,14 @@ ALTER TABLE airbnb_price MODIFY price INT NOT NULL;
 SELECT AVG(price) AS 'Average price' 
 FROM airbnb_price;
 
+
 -- 2. What is the average price per night, per neighbourhood, ordered from the most expensive to the cheapest?
 
 SELECT nbhood_full, AVG(price) AS Average_price 
 FROM airbnb_price
 GROUP BY nbhood_full
 ORDER BY Average_price DESC;
+
 
 -- 3. What is the average, MIN & MAX price per night, per room type, ordered by average price, from the cheapest to the most expensive?
 
@@ -47,6 +51,7 @@ FROM airbnb_price AS ap
 JOIN airbnb_room_type AS art ON art.listing_id = ap.listing_id
 GROUP BY 1,2
 ORDER BY 1;
+
 
 -- 5. Based on average price and grouped by room type and neighbourhood, splitting the NYC Airbnb accommodation into four categories: Budget, Average, Expensive and Extravagant.
 

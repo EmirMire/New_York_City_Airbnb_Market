@@ -108,6 +108,9 @@ FROM merged;
 ![image](https://user-images.githubusercontent.com/121452974/214642283-e1405f33-d6c5-47ca-97dd-10d611b1dbef.png)
 
 
+![image](https://user-images.githubusercontent.com/121452974/214702562-c0989a8b-2d1a-4091-b622-c6dc365e7c0a.png)
+
+
 
     -- 6. Average price per location (Manhattan, Brooklyn, Queens, etc.) and total number of available accommodations 
 

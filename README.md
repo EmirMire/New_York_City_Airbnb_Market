@@ -186,7 +186,8 @@ LIMIT 10;
 
 ![image](https://user-images.githubusercontent.com/121452974/214715263-7d2b1deb-6414-456c-a9b2-e04b3166a63a.png)
 
-![image](https://user-images.githubusercontent.com/121452974/214716996-88b40eeb-ad5e-4101-8a57-a8356a714684.png)
+![image](https://user-images.githubusercontent.com/121452974/214717498-ff88f310-d6b0-479c-a358-db3ea5753cbf.png)
+
 
 
 

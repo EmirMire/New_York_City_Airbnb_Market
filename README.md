@@ -63,7 +63,7 @@ ORDER BY AVG_price;
 
 ![image](https://user-images.githubusercontent.com/121452974/214641971-fcbf2748-010b-4d66-ab74-f1902943252c.png)
 
-# Looking at the result, we can conclude that shared room is the cheapest option in NYC through Airbnb is shared room, with the average price of 40,00 USD, and the most expensive option is entire home/apartment with the price of 182,83 USD.
+**Looking at the result, we can conclude that shared room is the cheapest option in NYC through Airbnb is shared room, with the average price of 40,00 USD, and the most expensive option is entire home/apartment with the price of 182,83 USD.**
 
 
     -- 4. Average, MAX & MIN price by neighbourhood and room type:
@@ -120,12 +120,12 @@ ORDER BY 1,3 DESC;
 
 ![image](https://user-images.githubusercontent.com/121452974/214642595-cb6716df-bd59-4dfa-9814-a6d335880d60.png)
 
-# Based on the result, we can see what are the most common room types across different locations, and their prices (AVG, MAX & MIN)
+_**Based on the result, we can see what are the most common room types across different locations, and their prices (AVG, MAX & MIN)**_
 
 
     -- 8. In which months are the NYC Airbnb accommodations booked the most?
 
-# (It is enough to extract only the name of the month since the data is only for one year - 2019)
+_(It is enough to extract only the name of the month since the data is only for one year - 2019)_
 
 SELECT SUBSTRING_INDEX(last_review, " ", 1) AS month_of_last_review , COUNT(*) AS No_reviews
 FROM airbnb_last_review
@@ -134,12 +134,12 @@ ORDER BY No_reviews DESC;
 
 ![image](https://user-images.githubusercontent.com/121452974/214642890-0ccbc2c6-7aa1-4163-bc79-d8cea2896e29.png)
 
-# According to the result of this query, it is obvious that the NYC Airbnb accommodations are mostly booked in the spring and summer times. June & July are definitely the most booked months.
+**According to the result of this query, it is obvious that the NYC Airbnb accommodations are mostly booked in the spring and summer times. June & July are definitely the most booked months.**
 
 
     -- 9. The total number of reviews indicating in which months the NYC Airbnb is mostly booked, across different locations? 
 
-# (It is enough to extract only the name of the month since the data is only for one year - 2019)
+_(It is enough to extract only the name of the month since the data is only for one year - 2019)_
 
 SELECT SUBSTRING_INDEX(nbhood_full, ",",1) AS location, SUBSTRING_INDEX(last_review, " ", 1) AS month_of_last_review, COUNT(*) AS No_reviews
 FROM airbnb_last_review AS alr

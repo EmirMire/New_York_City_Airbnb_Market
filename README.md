@@ -123,6 +123,8 @@ ORDER BY avg_price DESC;
 
 ![image](https://user-images.githubusercontent.com/121452974/214642488-49070064-5558-42ff-aaec-76c64a06292c.png)
 
+![image](https://user-images.githubusercontent.com/121452974/214720336-aa3efa77-e040-4bc0-a4aa-75b19c62d943.png)
+
 
 
     -- 7. Most common room type per location, average, MIN & MAX price

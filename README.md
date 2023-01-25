@@ -151,7 +151,10 @@ ORDER BY No_reviews DESC;
 
 ![image](https://user-images.githubusercontent.com/121452974/214642890-0ccbc2c6-7aa1-4163-bc79-d8cea2896e29.png)
 
-_**According to the result of this query, it is obvious that the NYC Airbnb accommodations are mostly booked in the spring and summer times. June & July are definitely the most booked months.**_
+![image](https://user-images.githubusercontent.com/121452974/214718562-f59be11f-e3ae-4239-8ba7-601706a04373.png)
+
+
+_**According to the result, it is obvious that the NYC Airbnb accommodations are mostly booked in the spring and summer times. June & July are definitely the most booked months.**_
 
 
 

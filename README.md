@@ -171,7 +171,7 @@ ORDER BY 1,3 DESC,2;
 
 
 
-    -- 10. TOP Accommodations in trending durring summer time (based on the last review date).
+    -- 10. TOP 10 cheapest accommodations popular during summer time (based on the last review date).
 
 SELECT nbhood_full, room_type, description, price, host_name, SUBSTRING_INDEX(last_review, " ", 1) AS month_of_last_review
 FROM airbnb_last_review AS alr
@@ -180,9 +180,13 @@ JOIN airbnb_room_type AS art ON art.listing_id = alr.listing_id
 GROUP BY ap.listing_id
 HAVING month_of_last_review = 'June' 
 OR month_of_last_review = 'July' 
-OR month_of_last_review = 'August';
+OR month_of_last_review = 'August'
+ORDER BY price
+LIMIT 10;
 
-![image](https://user-images.githubusercontent.com/121452974/214643310-af534b6a-7c58-4ccc-bf9e-f221686dc607.png)
+![image](https://user-images.githubusercontent.com/121452974/214715263-7d2b1deb-6414-456c-a9b2-e04b3166a63a.png)
+
+![image](https://user-images.githubusercontent.com/121452974/214716996-88b40eeb-ad5e-4101-8a57-a8356a714684.png)
 
 
 

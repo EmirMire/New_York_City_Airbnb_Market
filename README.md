@@ -5,6 +5,7 @@ New York City Airbnb Market - Data Analytics with MySQL &amp; Data Visualization
 
 The dataset for this project was taken from the real-world data platform – Kaggle. 
 
+
 - About Dataset
 
 Welcome to New York City (NYC), one of the most-visited cities in the world. As a result, from 2008 to 2019 there are many Airbnb listings to meet the high demand for temporary lodging for anywhere between a few nights to many months, guests and hosts have used Airbnb to expand on traveling possibilities and present a more unique, personalized way of experiencing the world.

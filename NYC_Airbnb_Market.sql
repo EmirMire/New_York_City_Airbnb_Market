@@ -117,7 +117,7 @@ ORDER BY 1,3 DESC,2;
 
 
 
--- 10. TOP Accommodations in trending durring summer time (based on the last review date).
+-- 10. TOP 10 cheapest accommodations popular during summer time (based on the last review date).
 
 SELECT nbhood_full, room_type, description, price, host_name, SUBSTRING_INDEX(last_review, " ", 1) AS month_of_last_review
 FROM airbnb_last_review AS alr
@@ -126,7 +126,10 @@ JOIN airbnb_room_type AS art ON art.listing_id = alr.listing_id
 GROUP BY ap.listing_id
 HAVING month_of_last_review = 'June' 
 OR month_of_last_review = 'July' 
-OR month_of_last_review = 'August';
+OR month_of_last_review = 'August'
+ORDER BY price
+LIMIT 10;
+
 
 
 -- 11.The total number of accommodations in Manhattan and AVG, MIN & MAX price?

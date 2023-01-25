@@ -1,5 +1,6 @@
 # New_York_City_Airbnb_Market
 
+
 New York City Airbnb Market - Data Analytics with MySQL &amp; Data Visualization with MS Excel.
 
 The dataset for this project was taken from the real-world data platform – Kaggle. 
@@ -13,6 +14,7 @@ This dataset includes all needed information from host name, listing id, dates, 
 Using this dataset, you can apply various data cleaning techniques, perform data analytics and data visualization, make predictions, and most importantly – HAVE FUN!
 
 
+
 **LET'S GET STARTED!**
 
     -- First step is to create a database and import real-world data from Kaggle.
@@ -20,6 +22,7 @@ Using this dataset, you can apply various data cleaning techniques, perform data
 CREATE DATABASE newyork_airbnb;
 
 USE newyork_airbnb;
+
 
 
     -- After importing our New York City Airbnb Market real-world data, some adjustments will be made in one of the tables.
@@ -33,6 +36,7 @@ ALTER TABLE airbnb_price MODIFY price INT NOT NULL;
 
     -- Now we can start analyzing the data.
 
+
 # DATA ANALYTICS
 
     -- 1. What is the average price, per night, of an Airbnb listing in NYC?
@@ -41,6 +45,7 @@ SELECT AVG(price) AS 'Average price'
 FROM airbnb_price;
 
 ![image](https://user-images.githubusercontent.com/121452974/214641233-6682769f-3d6a-4fad-bbfd-d2043c714bdb.png)
+
 
 
     -- 2. What is the average price per night, per neighbourhood, ordered from the most expensive to the cheapest?
@@ -53,7 +58,9 @@ ORDER BY Average_price DESC;
 ![image](https://user-images.githubusercontent.com/121452974/214641629-9feeccff-7278-40bc-aa9e-59e5b6f4a5cc.png)
 
 
-    -- 3. What is the average, MIN & MAX price per night, per room type, ordered by average price, from the cheapest to the most expensive?
+
+    -- 3. What is the average, MIN & MAX price per night, per room type, ordered by average price, 
+          from the cheapest to the most expensive?
 
 SELECT room_type, ROUND(AVG(price), 2) AS AVG_price, MIN(price) AS MIN_price, MAX(price) AS MAX_price
 FROM airbnb_room_type
@@ -63,7 +70,8 @@ ORDER BY AVG_price;
 
 ![image](https://user-images.githubusercontent.com/121452974/214641971-fcbf2748-010b-4d66-ab74-f1902943252c.png)
 
-**Looking at the result, we can conclude that shared room is the cheapest option in NYC through Airbnb is shared room, with the average price of 40,00 USD, and the most expensive option is entire home/apartment with the price of 182,83 USD.**
+_**Looking at the result, we can conclude that shared room is the cheapest option in NYC through Airbnb is shared room, with the average price of 40,00 USD, and the most expensive option is entire home/apartment with the price of 182,83 USD.**_
+
 
 
     -- 4. Average, MAX & MIN price by neighbourhood and room type:
@@ -77,7 +85,9 @@ ORDER BY 1;
 ![image](https://user-images.githubusercontent.com/121452974/214642106-e83af83a-ce6d-471a-84b9-c40dfbf8b481.png)
 
 
-    -- 5. Based on average price and grouped by room type and neighbourhood, splitting the NYC Airbnb accommodation into four categories: Budget, Average, Expensive and Extravagant.
+
+    -- 5. Based on average price and grouped by room type and neighbourhood, splitting the NYC Airbnb accommodation into four categories: 
+          Budget, Average, Expensive and Extravagant.
 
 WITH merged AS(
 SELECT room_type, nbhood_full, ROUND(AVG(price),2) AS Avg_price, MAX(price) AS Max_price, MIN(price) AS Min_price
@@ -97,6 +107,7 @@ FROM merged;
 ![image](https://user-images.githubusercontent.com/121452974/214642283-e1405f33-d6c5-47ca-97dd-10d611b1dbef.png)
 
 
+
     -- 6. Average price per location (Manhattan, Brooklyn, Queens, etc.) and total number of available accommodations 
 
 SELECT SUBSTRING_INDEX(nbhood_full, ",",1) AS location, ROUND(avg(price), 2) AS avg_price, COUNT(*) AS 'Number of accommodations'
@@ -107,6 +118,7 @@ GROUP BY location
 ORDER BY avg_price DESC;
 
 ![image](https://user-images.githubusercontent.com/121452974/214642488-49070064-5558-42ff-aaec-76c64a06292c.png)
+
 
 
     -- 7. Most common room type per location, average, MIN & MAX price
@@ -123,6 +135,7 @@ ORDER BY 1,3 DESC;
 _**Based on the result, we can see what are the most common room types across different locations, and their prices (AVG, MAX & MIN)**_
 
 
+
     -- 8. In which months are the NYC Airbnb accommodations booked the most?
 
 _(It is enough to extract only the name of the month since the data is only for one year - 2019)_
@@ -134,7 +147,8 @@ ORDER BY No_reviews DESC;
 
 ![image](https://user-images.githubusercontent.com/121452974/214642890-0ccbc2c6-7aa1-4163-bc79-d8cea2896e29.png)
 
-**According to the result of this query, it is obvious that the NYC Airbnb accommodations are mostly booked in the spring and summer times. June & July are definitely the most booked months.**
+_**According to the result of this query, it is obvious that the NYC Airbnb accommodations are mostly booked in the spring and summer times. June & July are definitely the most booked months.**_
+
 
 
     -- 9. The total number of reviews indicating in which months the NYC Airbnb is mostly booked, across different locations? 
@@ -151,6 +165,7 @@ ORDER BY 1,3 DESC,2;
 ![image](https://user-images.githubusercontent.com/121452974/214643060-1b552633-0d53-4bec-bfa6-7cff43c794d2.png)
 
 
+
     -- 10. TOP Accommodations in trending durring summer time (based on the last review date).
 
 SELECT nbhood_full, room_type, description, price, host_name, SUBSTRING_INDEX(last_review, " ", 1) AS month_of_last_review
@@ -163,6 +178,7 @@ OR month_of_last_review = 'July'
 OR month_of_last_review = 'August';
 
 ![image](https://user-images.githubusercontent.com/121452974/214643310-af534b6a-7c58-4ccc-bf9e-f221686dc607.png)
+
 
 
     -- 11.The total number of accommodations in Manhattan and AVG, MIN & MAX price?
@@ -186,6 +202,7 @@ WHERE location = "Manhattan"
 ORDER BY price ASC;
 
 ![image](https://user-images.githubusercontent.com/121452974/214643696-a8a91e9b-b974-47c9-a59f-567b1a4842fd.png)
+
 
 
     -- 12. The total number of accommodations per neighbourhood in Manhattan and AVG, MIN & MAX price?

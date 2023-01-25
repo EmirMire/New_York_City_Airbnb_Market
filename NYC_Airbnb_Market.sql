@@ -109,10 +109,9 @@ ORDER BY No_reviews DESC;
 
 # (It is enough to extract only the name of the month since the data is only for one year - 2019)
 
-SELECT SUBSTRING_INDEX(nbhood_full, ",",1) AS location, SUBSTRING_INDEX(last_review, " ", 1) AS month_of_last_review, COUNT(*) AS No_reviews
+SELECT SUBSTRING_INDEX(nbhood_full, ",",1) AS location, SUBSTRING_INDEX(last_review, " ", 1) AS month_of_last_review, COUNT(last_review) AS No_reviews
 FROM airbnb_last_review AS alr
 JOIN airbnb_price AS ap ON ap.listing_id = alr.listing_id
-JOIN airbnb_room_type AS art ON art.listing_id = alr.listing_id
 GROUP BY 2, 1
 ORDER BY 1,3 DESC,2;
 

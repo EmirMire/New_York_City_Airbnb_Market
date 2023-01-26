@@ -141,6 +141,9 @@ ORDER BY 1,3 DESC;
 
 ![image](https://user-images.githubusercontent.com/121452974/214642595-cb6716df-bd59-4dfa-9814-a6d335880d60.png)
 
+![image](https://user-images.githubusercontent.com/121452974/214723155-604d5a10-e2e8-4b58-81fa-38cbfbe548db.png)
+
+
 _**Based on the result, we can see what are the most common room types across different locations, and their prices (AVG, MAX & MIN)**_
 
 
